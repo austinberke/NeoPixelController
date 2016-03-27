@@ -1,31 +1,13 @@
+/* NeoPixelController
+ *    NeoPixelController.ino
+ * A versatile Arduino program for controlling a NeoPixel LED strip.
+ * Copyright 2016 Austin Berke
+ */
+
 #include <FastLED.h>
-
-#define NUM_LEDS    240
-#define LED_TYPE    NEOPIXEL
-#define LED_PIN     6
-#define MAX_V       5
-#define MAX_A       7
-#define BRIGHTNESS  255
-
-enum mode { 
-  DIVIDE, 
-  FADE, 
-  BLINK,
-  BOUNCE, 
-  SWEEP, 
-  ASWEEP, 
-  RAND 
-};
-
-/* ============= */
-#define MODE  BOUNCE
-#define SPEED 2
-/* ============= */
-
-CRGBPalette16 palette;
-TBlendType    blending;
-
-CRGB leds[NUM_LEDS];
+#include "Palettes.h"
+#include "Modes.h"
+#include "Settings.h"
 
 void setup() { 
   delay(3000); // power-up safety delay
@@ -42,6 +24,15 @@ void displayPattern(byte m) {
     default:
     case DIVIDE:
       p_divide();
+      break;
+    case ROLLING_DIVIDE:
+      p_rolling_divide();
+      break;
+    case GRADIENT:
+      p_gradient();
+      break;
+    case ROLLING_GRADIENT:
+      p_rolling_gradient();
       break;
     case FADE:
       p_fade();

@@ -1,12 +1,41 @@
+/* NeoPixelController
+ *    Modes.h
+ * A versatile Arduino program for controlling a NeoPixel LED strip.
+ * Copyright 2016 Austin Berke
+ */
+ 
+#ifndef MODES_H
+#define MODES_H
 
+#include "Settings.h"
+
+void setAll(CRGB& c);
 
 void p_divide() {
-  char width = NUM_LEDS / NUM_COLORS;
-  int pos = 0;
-  for (int i = 1; i <= NUM_COLORS; i++) {
-    for ( ; pos != width * i; pos++) {
-      leds[pos] = colors[i-1];
-    }
+  for (int i = 0; i != NUM_LEDS; i++) {
+     leds[i] = ColorFromPalette(palette, i, BRIGHTNESS, NOBLEND);
+  }
+  FastLED.show();
+}
+
+
+void p_rolling_divide() {
+  for (int i = 0; i != NUM_LEDS; i++) {
+     leds[i] = ColorFromPalette(palette, i + millis()/SPEED, BRIGHTNESS, NOBLEND);
+  }
+  FastLED.show();
+}
+
+void p_gradient() {
+  for (int i = 0; i != NUM_LEDS; i++) {
+     leds[i] = ColorFromPalette(palette, i, BRIGHTNESS, LINEARBLEND);
+  }
+  FastLED.show();
+}
+
+void p_rolling_gradient() {
+  for (int i = 0; i != NUM_LEDS; i++) {
+     leds[i] = ColorFromPalette(palette, i + millis()/SPEED, BRIGHTNESS, LINEARBLEND);
   }
   FastLED.show();
 }
@@ -141,3 +170,5 @@ void setAll(CRGB& c) {
     leds[i] = c;
   }
 }
+
+#endif /* MODES_H */
