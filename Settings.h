@@ -11,8 +11,8 @@
 #define LED_TYPE    NEOPIXEL
 #define LED_PIN     6
 #define MAX_V       5
-#define MAX_A       7
-#define BRIGHTNESS  100
+#define MAX_A       8
+#define BRIGHTNESS  255
 #define NUM_COLORS  16
 
 enum Mode { 
@@ -25,13 +25,13 @@ enum Mode {
   BOUNCE, 
   SWEEP, 
   ASWEEP, 
-  RAND 
+  SPARKLE 
 };
 
 /* ==================================== */
-#define PALETTE carrot_gp
-#define MODE ROLLING_GRADIENT
-#define SPEED 100
+#define PALETTE PartyColors_p
+#define MODE SPARKLE
+#define SPEED 50
 /* =================================== */
 
 CRGBPalette16 palette = PALETTE;

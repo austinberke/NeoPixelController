@@ -136,9 +136,9 @@ void p_asweep() {
   }
 }
 
-void p_rand() {
+void p_sparkle() {
   FastLED.clear();
-  for (int i = 0; i != 10; i++) {
+  for (int i = 0; i != 20; i++) {
     leds[random(NUM_LEDS)] = colors[random(NUM_COLORS)];
   }
   FastLED.show();

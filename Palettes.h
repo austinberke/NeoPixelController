@@ -43,5 +43,17 @@ DEFINE_GRADIENT_PALETTE( carrot_gp ) {
   254, 255,255,255,
   255, 255,255,255};
 
+// Gradient palette "bhw1_01_gp", originally from
+// http://soliton.vm.bytemark.co.uk/pub/cpt-city/bhw/bhw1/tn/bhw1_01.png.index.html
+// converted for FastLED with gammas (2.6, 2.2, 2.5)
+// Size: 12 bytes of program space.
+
+DEFINE_GRADIENT_PALETTE( bhw1_01_gp ) {
+    0, 227,101,  3,
+  117, 194, 18, 19,
+  255,  92,  8,192};
+
+
+
 
 #endif /* PALETTES_H */
