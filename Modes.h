@@ -41,30 +41,10 @@ void p_rolling_gradient() {
 }
 
 void p_fade() {
-  for (int i = 0; i != NUM_COLORS; i++) {
-    CRGB curr = CRGB::Black;
-    CRGB oneHundredth = CRGB(colors[i].r * 0.01, colors[i].g * 0.01, colors[i].b * 0.01);
-    
-    // ==> Fade up
-    for (int j = 0; j != 100; j++) {
-      setAll(curr);
-      FastLED.show();
-      curr += oneHundredth;
-      delay(SPEED);
-      
-    }
-
-    delay(SPEED*3);
-
-    // ==> Fade down
-    for (int j = 0; j != 100; j++) {
-      setAll(curr);
-      FastLED.show();
-      curr -= oneHundredth;
-      delay(SPEED);
-    }
-
+  for (int i = 0; i != NUM_LEDS; i++) {
+     leds[i] = ColorFromPalette(palette, millis()/SPEED, BRIGHTNESS, LINEARBLEND);
   }
+  FastLED.show();
 }
 
 void p_blink() {

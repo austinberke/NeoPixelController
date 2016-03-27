@@ -29,9 +29,9 @@ enum Mode {
 };
 
 /* ==================================== */
-#define PALETTE elevation_gp
+#define PALETTE carrot_gp
 #define MODE ROLLING_GRADIENT
-#define SPEED 30
+#define SPEED 100
 /* =================================== */
 
 CRGBPalette16 palette = PALETTE;
