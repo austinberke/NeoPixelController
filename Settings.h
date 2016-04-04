@@ -12,7 +12,7 @@
 #define LED_PIN     6
 #define MAX_V       5
 #define MAX_A       8
-#define BRIGHTNESS  200
+#define BRIGHTNESS  100
 #define NUM_COLORS  16
 
 enum Mode { 
@@ -32,7 +32,7 @@ enum Mode {
 
 /* ==================================== */
 #define PALETTE RainbowColors_p
-#define MODE ROLLING_STRIPES
+#define MODE BOUNCE
 #define SPEED 5
 /* =================================== */
 

@@ -85,23 +85,25 @@ void p_blink() {
 }
 
 void p_bounce() {
-  for (int i = 0; i != NUM_COLORS; i++) { 
-    if (i%2 == 0) {
+  bool direction = 1;
+  for (int i = 0; i < 256; i+=32) { 
+    if (direction) {
       for (int j = 0; j != NUM_LEDS-1; j++) {
-        leds[j] = leds[j+1] = colors[i];
+        leds[j] = leds[j+1] = ColorFromPalette(palette, i);
         FastLED.show();
         delay(SPEED);
         FastLED.clear();
       }
+      direction = 0;
     }
     else {
       for (int j = NUM_LEDS-1; j != 0; j--) {
-        leds[j] = leds[j-1] = colors[i];
+        leds[j] = leds[j-1] = ColorFromPalette(palette, i);
         FastLED.show();
         delay(SPEED);
         FastLED.clear();
       }
-      
+      direction = 1;
     }
   }
 }
