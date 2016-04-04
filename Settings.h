@@ -12,12 +12,14 @@
 #define LED_PIN     6
 #define MAX_V       5
 #define MAX_A       8
-#define BRIGHTNESS  255
+#define BRIGHTNESS  200
 #define NUM_COLORS  16
 
 enum Mode { 
   DIVIDE,
   ROLLING_DIVIDE,
+  STRIPES,
+  ROLLING_STRIPES,
   GRADIENT,
   ROLLING_GRADIENT, 
   FADE, 
@@ -29,9 +31,9 @@ enum Mode {
 };
 
 /* ==================================== */
-#define PALETTE PartyColors_p
-#define MODE SPARKLE
-#define SPEED 50
+#define PALETTE RainbowColors_p
+#define MODE ROLLING_STRIPES
+#define SPEED 5
 /* =================================== */
 
 CRGBPalette16 palette = PALETTE;

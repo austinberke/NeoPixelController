@@ -28,6 +28,12 @@ void displayPattern(byte m) {
     case ROLLING_DIVIDE:
       p_rolling_divide();
       break;
+    case STRIPES:
+      p_stripes();
+      break;
+    case ROLLING_STRIPES:
+      p_rolling_stripes();
+      break;
     case GRADIENT:
       p_gradient();
       break;
