@@ -31,7 +31,7 @@ enum Mode {
 };
 
 /* ==================================== */
-#define PALETTE bhw1_01_gp
+#define PALETTE qual_dark_06_gp
 #define MODE ROLLING_STRIPES
 #define SPEED 5
 /* =================================== */

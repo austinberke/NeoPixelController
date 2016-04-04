@@ -154,8 +154,9 @@ void p_asweep() {
 
 void p_sparkle() {
   FastLED.clear();
-  for (int i = 0; i != 50; i++) {
-    leds[random(NUM_LEDS)] = colors[random(NUM_COLORS)];
+  for (int i = 0; i != 30; i++) {
+    int r = random(NUM_LEDS-1);
+    leds[r] = leds[r+1] = colors[random(NUM_COLORS)];
   }
   FastLED.show();
   delay(SPEED);
