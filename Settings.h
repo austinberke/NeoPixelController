@@ -1,8 +1,8 @@
 /* NeoPixelController
- *    Settings.h
- * A versatile Arduino program for controlling a NeoPixel LED strip.
- * Copyright 2016 Austin Berke
- */
+      Settings.h
+   A versatile Arduino program for controlling a NeoPixel LED strip.
+   Copyright 2016 Austin Berke
+*/
 
 #ifndef SETTINGS_H
 #define SETTINGS_H
@@ -15,24 +15,24 @@
 #define BRIGHTNESS  100
 #define NUM_COLORS  16
 
-enum Mode { 
+enum Mode {
   DIVIDE,
   ROLLING_DIVIDE,
   STRIPES,
   ROLLING_STRIPES,
   GRADIENT,
-  ROLLING_GRADIENT, 
-  FADE, 
+  ROLLING_GRADIENT,
+  FADE,
   BLINK,
-  BOUNCE, 
-  SWEEP, 
-  ASWEEP, 
-  SPARKLE 
+  BOUNCE,
+  SWEEP,
+  ASWEEP,
+  SPARKLE
 };
 
 /* ==================================== */
-#define PALETTE RainbowColors_p
-#define MODE BOUNCE
+#define PALETTE bhw1_01_gp
+#define MODE ROLLING_STRIPES
 #define SPEED 5
 /* =================================== */
 

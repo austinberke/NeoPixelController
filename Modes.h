@@ -28,14 +28,14 @@ void p_rolling_divide() {
 
 void p_stripes() {
   for (int i = 0; i != NUM_LEDS; i++) { 
-    leds[i] = ColorFromPalette(palette, (i*8)%NUM_LEDS, BRIGHTNESS, NOBLEND); 
+    leds[i] = ColorFromPalette(palette, (i*8)%256, BRIGHTNESS, NOBLEND); 
   }
   FastLED.show();
 }
 
 void p_rolling_stripes() {
   for (int i = 0; i != NUM_LEDS; i++) { 
-    leds[i] = ColorFromPalette(palette, (i*8)%NUM_LEDS + millis()/SPEED, BRIGHTNESS, NOBLEND); 
+    leds[i] = ColorFromPalette(palette, (i*8)%256 + millis()/SPEED, BRIGHTNESS, NOBLEND); 
   }
   FastLED.show();
 }
