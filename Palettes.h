@@ -134,4 +134,10 @@ DEFINE_GRADIENT_PALETTE( liahlah2_gp ) {
   229,   7, 19, 51,
   255,  38, 73,145};
 
+DEFINE_GRADIENT_PALETTE( ucla_gp ) {
+  0, 50, 132, 191,
+  127, 50, 132, 191,
+  128, 255, 232, 0,
+  255, 255, 232, 0};
+
 #endif /* PALETTES_H */

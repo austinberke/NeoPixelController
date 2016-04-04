@@ -28,14 +28,14 @@ void p_rolling_divide() {
 
 void p_stripes() {
   for (int i = 0; i != NUM_LEDS; i++) { 
-    leds[i] = ColorFromPalette(palette, (i*8)%256, BRIGHTNESS, NOBLEND); 
+    leds[i] = ColorFromPalette(palette, (i*8), BRIGHTNESS, NOBLEND); 
   }
   FastLED.show();
 }
 
 void p_rolling_stripes() {
   for (int i = 0; i != NUM_LEDS; i++) { 
-    leds[i] = ColorFromPalette(palette, (i*8)%256 + millis()/SPEED, BRIGHTNESS, NOBLEND); 
+    leds[i] = ColorFromPalette(palette, (i*8) + millis()/SPEED, BRIGHTNESS, NOBLEND); 
   }
   FastLED.show();
 }
@@ -156,7 +156,8 @@ void p_sparkle() {
   FastLED.clear();
   for (int i = 0; i != 30; i++) {
     int r = random(NUM_LEDS-1);
-    leds[r] = leds[r+1] = colors[random(NUM_COLORS)];
+    int j = map(i, 0, 30, 0, 255);
+    leds[r] = leds[r+1] = ColorFromPalette(palette, j);
   }
   FastLED.show();
   delay(SPEED);

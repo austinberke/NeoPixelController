@@ -12,7 +12,7 @@
 #define LED_PIN     6
 #define MAX_V       5
 #define MAX_A       8
-#define BRIGHTNESS  100
+#define BRIGHTNESS  255
 #define NUM_COLORS  16
 
 enum Mode {
@@ -31,9 +31,9 @@ enum Mode {
 };
 
 /* ==================================== */
-#define PALETTE qual_dark_06_gp
+#define PALETTE ucla_gp
 #define MODE ROLLING_STRIPES
-#define SPEED 5
+#define SPEED 15
 /* =================================== */
 
 CRGBPalette16 palette = PALETTE;
