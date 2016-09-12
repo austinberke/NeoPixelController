@@ -12,19 +12,6 @@
 //    CloudColors_p, LavaColors_p, ForestColors_p, and PartyColors_p.
 
 
-// Gradient palette "elevation_gp", originally from
-// http://soliton.vm.bytemark.co.uk/pub/cpt-city/grass/tn/elevation.png.index.html
-// converted for FastLED with gammas (2.6, 2.2, 2.5)
-// Size: 24 bytes of program space.
-
-DEFINE_GRADIENT_PALETTE(elevation_gp) {
-    0,   0,135,123,
-   51,   0,255,  0,
-  102, 255,255,  0,
-  153, 255, 55,  0,
-  204, 120, 55,  7,
-  255,   1,  1,  1};
-
 // Gradient palette "carrot_gp", originally from
 // http://soliton.vm.bytemark.co.uk/pub/cpt-city/neota/food/tn/carrot.png.index.html
 // converted for FastLED with gammas (2.6, 2.2, 2.5)
@@ -85,6 +72,20 @@ DEFINE_GRADIENT_PALETTE( mexican_flag_gp ) {
   169, 255,  0,  0,
   255, 255,  0,  0};
 
+// Gradient palette "sky_45_gp", originally from
+// http://soliton.vm.bytemark.co.uk/pub/cpt-city/rafi/tn/sky-45.png.index.html
+// converted for FastLED with gammas (2.6, 2.2, 2.5)
+// Size: 20 bytes of program space.
+
+DEFINE_GRADIENT_PALETTE( sky_45_gp ) {
+    0, 249,205,  4,
+   51, 255,239,123,
+   87,   5,141, 85,
+  178,   1, 26, 43,
+  255,   0,  2, 23};
+
+
+
 // Gradient palette "Optimus_Prime_gp", originally from
 // http://soliton.vm.bytemark.co.uk/pub/cpt-city/jjg/ccolo/vredeling/tn/Optimus_Prime.png.index.html
 // converted for FastLED with gammas (2.6, 2.2, 2.5)
@@ -103,6 +104,11 @@ DEFINE_GRADIENT_PALETTE( Optimus_Prime_gp ) {
   229,  53,  1,  1,
   255,  53,  1,  1};
 
+  DEFINE_GRADIENT_PALETTE( Red_gp ) {
+  0, 255, 0, 0,
+  128, 255, 1, 1,
+  255, 255, 0, 0};
+
  DEFINE_GRADIENT_PALETTE( RedGreenBlue_gp ) {
   0, 255, 0, 0,
   128, 0, 255, 0,
@@ -111,11 +117,40 @@ DEFINE_GRADIENT_PALETTE( Optimus_Prime_gp ) {
   DEFINE_GRADIENT_PALETTE ( RWBStripe_gp ) {
     0, 0, 0, 0,
     120, 0, 0, 0,
-    121, 255, 0, 0,
+    121, 0, 0, 255,
     130, 255, 255, 255,
-    139, 0, 0, 255,
+    139, 255, 0, 0,
     140, 0, 0, 0,
     255, 0, 0, 0};
+
+ DEFINE_GRADIENT_PALETTE ( TriStripe_gp ) {
+    0, 0, 0, 0,
+    120, 0, 0, 0,
+    121, 27, 13, 43,
+    130, 54, 34, 255,
+    139, 27, 13, 43,
+    140, 0, 0, 0,
+    255, 0, 0, 0};    
+    
+DEFINE_GRADIENT_PALETTE ( WhiteStripe_gp ) {
+    0, 0, 0, 0,
+    120, 0, 0, 0,
+    121, 255, 255, 255,
+    139, 255, 255, 255,
+    140, 0, 0, 0,
+    255, 0, 0, 0};
+
+DEFINE_GRADIENT_PALETTE ( TwoStripes_gp ) {
+    0, 0, 0, 0,
+    56, 0, 0, 0,
+    60, 255, 0, 0,
+    64, 0, 0, 0,
+    176, 0, 0, 0,
+    180, 0, 0, 255,
+    184, 0, 0, 0,
+    255, 0, 0, 0};
+    
+
 
 // Gradient palette "liahlah2_gp", originally from
 // http://soliton.vm.bytemark.co.uk/pub/cpt-city/rc/tn/liahlah2.png.index.html
@@ -140,4 +175,30 @@ DEFINE_GRADIENT_PALETTE( ucla_gp ) {
   128, 255, 232, 0,
   255, 255, 232, 0};
 
+DEFINE_GRADIENT_PALETTE( thetachi_gp ) {
+  0, 255, 0, 0,
+  127, 255, 0, 0,
+  128, 255, 255, 255,
+  255, 255, 255, 255}; 
+
+extern const TProgmemRGBPalette16 WarmStripeColors_p FL_PROGMEM =   
+{
+  CRGB::Red, 0x000000, 
+  CRGB::White, 0x000000,
+  CRGB::Red, 0x000000, 
+  CRGB::White, 0x000000,
+  CRGB::Red, 0x000000, 
+  CRGB::White, 0x000000,
+  CRGB::Red, 0x000000, 
+  CRGB::White, 0x000000
+};
+
+extern const TProgmemRGBPalette16 Indigo_p FL_PROGMEM =   
+{
+  CRGB::Indigo, CRGB::Indigo, CRGB::Indigo, CRGB::Indigo,
+  CRGB::Indigo, CRGB::Indigo, CRGB::Indigo, CRGB::Indigo,
+  CRGB::Indigo, CRGB::Indigo, CRGB::Indigo, CRGB::Indigo,
+  CRGB::Indigo, CRGB::Indigo, CRGB::Indigo, CRGB::Indigo,
+  
+};
 #endif /* PALETTES_H */

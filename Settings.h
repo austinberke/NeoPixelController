@@ -7,13 +7,20 @@
 #ifndef SETTINGS_H
 #define SETTINGS_H
 
-#define NUM_LEDS    240
+
 #define LED_TYPE    NEOPIXEL
-#define LED_PIN     6
-#define MAX_V       5
-#define MAX_A       8
+
+// ==> Define pin and number of LEDs for first strip
+#define LED_PIN_1     2 // Pin 2 is orange on first Cat6 cable for OctoWS2811
+#define NUM_LEDS_1    480
+
+
+// ==> Define pin and number of LEDs for second strip
+#define LED_PIN_2     6 // Pin 6 is orange on second Cat6 cable for OctoWS2811
+#define NUM_LEDS_2    240
+
+
 #define BRIGHTNESS  255
-#define NUM_COLORS  16
 
 enum Mode {
   DIVIDE,
@@ -23,6 +30,8 @@ enum Mode {
   GRADIENT,
   ROLLING_GRADIENT,
   FADE,
+  HALF_FADE,
+  THREE_FADE,
   BLINK,
   BOUNCE,
   SWEEP,
@@ -31,15 +40,20 @@ enum Mode {
 };
 
 /* ==================================== */
-#define PALETTE ucla_gp
-#define MODE ROLLING_STRIPES
-#define SPEED 15
+#define PALETTE  RainbowStripeColors_p
+#define MODE ROLLING_DIVIDE
+#define SPEED 50
 /* =================================== */
 
 CRGBPalette16 palette = PALETTE;
 CRGB* colors = palette.entries;
+#define NUM_COLORS  16
 
+// ==> NUM_LEDS is the largest amount of LEDs on a single strip; 
+//     the smaller strip will mirror the first as long as it can
+#define NUM_LEDS NUM_LEDS_1 > NUM_LEDS_2 ? NUM_LEDS_1 : NUM_LEDS_2
 CRGB leds[NUM_LEDS];
+
 typedef CRGBPalette16 Palette;
 
 #endif /* SETTINGS_H */

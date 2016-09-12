@@ -9,10 +9,13 @@
 #include "Modes.h"
 #include "Settings.h"
 
+void displayPattern(byte m);
+
 void setup() { 
-  delay(3000); // power-up safety delay
-  FastLED.setMaxPowerInVoltsAndMilliamps(MAX_V, MAX_A*1000);
-  FastLED.addLeds<LED_TYPE, LED_PIN>(leds, NUM_LEDS).setCorrection(TypicalLEDStrip);
+  // ==> Set up LEDs connected to first data pin
+  FastLED.addLeds<LED_TYPE, LED_PIN_1>(leds, NUM_LEDS_1).setCorrection(TypicalLEDStrip);
+  // ==> Set up LEDs connected to second data pin, mirrored from first
+  FastLED.addLeds<LED_TYPE, LED_PIN_2>(leds, NUM_LEDS_2).setCorrection(TypicalLEDStrip);
   FastLED.setBrightness(BRIGHTNESS);
 }
 void loop() { 
@@ -42,6 +45,12 @@ void displayPattern(byte m) {
       break;
     case FADE:
       p_fade();
+      break;
+    case HALF_FADE:
+      p_half_fade();
+      break;
+    case THREE_FADE:
+      p_three_fade();
       break;
     case BLINK:
       p_blink();
