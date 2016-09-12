@@ -2,7 +2,7 @@
 NeoPixelController is a program whose purpose is to control one or more LED strips with several preset patterns and color palettes. It is currently designed to be used on a Teensy 3.2 with an OctoWS2811 adapter connected to two sets of NeoPixel (WS2812B) strips.
 
 # Usage
-Settings.h contains constants to adjust the program functionality as needed. Lines 42-46 can be used to update the current color palette, mode, and speed. Palettes are found in Palettes.h and can be modified or created either manually or using [PaletteKnife](http://fastled.io/tools/paletteknife/).
+Settings.h contains constants to adjust the program functionality as needed. Lines 41-45 can be used to update the current color palette, mode, and speed. Palettes are found in Palettes.h and can be modified or created either manually or using [PaletteKnife](http://fastled.io/tools/paletteknife/).
 
 # Modes
 |Mode   |Description   |
