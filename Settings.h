@@ -35,7 +35,6 @@ enum Mode {
   BLINK,
   BOUNCE,
   SWEEP,
-  ASWEEP,
   SPARKLE
 };
 
@@ -47,7 +46,6 @@ enum Mode {
 
 CRGBPalette16 palette = PALETTE;
 CRGB* colors = palette.entries;
-#define NUM_COLORS  16
 
 // ==> NUM_LEDS is the largest amount of LEDs on a single strip; 
 //     the smaller strip will mirror the first as long as it can

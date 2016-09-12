@@ -19,7 +19,6 @@ Settings.h contains constants to adjust the program functionality as needed. Lin
 |BLINK   |Discretely jump through the palette colors, blinking in alternating two's.   |
 |BOUNCE   |Send a short ray of light bouncing back and forth through the entire LED array and change to next palette color at each end.  |
 |SWEEP   |Send a ray of light bouncing back and forth through the entire LED array and change to next palette color at each end, leaving behind a trail of its color.   |
-|ASWEEP   |Send a ray of light bouncing back and forth through the entire LED array and change to next palette color at each end, leaving behind a trail of its color. Colors alternate in two's between the current and next palette color.   |
 |SPARKLE   |Ten segments of ten LEDs are set to a random color from the palette at each update.   |
 
 # License 

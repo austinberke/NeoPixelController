@@ -61,9 +61,6 @@ void displayPattern(byte m) {
     case SWEEP:
       p_sweep();
       break;
-    case ASWEEP:
-      p_asweep();
-     break;
    case SPARKLE:
       p_sparkle();
       break;
