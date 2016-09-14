@@ -39,9 +39,9 @@ enum Mode {
 };
 
 /* ==================================== */
-#define PALETTE  RainbowStripeColors_p
+#define PALETTE  RainbowColors_p
 #define MODE ROLLING_DIVIDE
-#define SPEED 50
+#define SPEED 100
 /* =================================== */
 
 CRGBPalette16 palette = PALETTE;
@@ -49,7 +49,7 @@ CRGB* colors = palette.entries;
 
 // ==> NUM_LEDS is the largest amount of LEDs on a single strip; 
 //     the smaller strip will mirror the first as long as it can
-#define NUM_LEDS NUM_LEDS_1 > NUM_LEDS_2 ? NUM_LEDS_1 : NUM_LEDS_2
+const int NUM_LEDS = NUM_LEDS_1 > NUM_LEDS_2 ? NUM_LEDS_1 : NUM_LEDS_2;
 CRGB leds[NUM_LEDS];
 
 typedef CRGBPalette16 Palette;
