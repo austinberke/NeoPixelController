@@ -39,9 +39,9 @@ enum Mode {
 };
 
 /* ==================================== */
-#define PALETTE  RainbowColors_p
-#define MODE ROLLING_DIVIDE
-#define SPEED 100
+#define PALETTE  ucla_gp
+#define MODE BLINK
+#define SPEED 500
 /* =================================== */
 
 CRGBPalette16 palette = PALETTE;

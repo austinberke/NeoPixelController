@@ -132,7 +132,7 @@ void p_blink() {
     if (i % 32 == 0) {
      for (int j = 0; j < NUM_LEDS; j++) {
       if(j%4 < 2) // Alternate between color and black every two LEDs
-        leds[j] = colors[i];
+        leds[j] = ColorFromPalette(palette, i);
       else
         leds[j] = CRGB::Black;
     }
@@ -140,7 +140,7 @@ void p_blink() {
   else {
     for (int j = 0; j < NUM_LEDS; j++) {
       if(j%4 >= 2)
-        leds[j] = colors[i];
+        leds[j] = ColorFromPalette(palette, i);
       else
         leds[j] = CRGB::Black;
     }

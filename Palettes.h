@@ -193,12 +193,12 @@ extern const TProgmemRGBPalette16 WarmStripeColors_p FL_PROGMEM =
   CRGB::White, 0x000000
 };
 
-extern const TProgmemRGBPalette16 Indigo_p FL_PROGMEM =   
+extern const TProgmemRGBPalette16 Green_p FL_PROGMEM =   
 {
-  CRGB::Indigo, CRGB::Indigo, CRGB::Indigo, CRGB::Indigo,
-  CRGB::Indigo, CRGB::Indigo, CRGB::Indigo, CRGB::Indigo,
-  CRGB::Indigo, CRGB::Indigo, CRGB::Indigo, CRGB::Indigo,
-  CRGB::Indigo, CRGB::Indigo, CRGB::Indigo, CRGB::Indigo,
+  CRGB::Green, CRGB::Green, CRGB::Green, CRGB::Green, 
+  CRGB::Green, CRGB::Green, CRGB::Green, CRGB::Green, 
+  CRGB::Green, CRGB::Green, CRGB::Green, CRGB::Green, 
+  CRGB::Green, CRGB::Green, CRGB::Green, CRGB::Black, 
   
 };
 #endif /* PALETTES_H */
