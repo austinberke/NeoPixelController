@@ -183,14 +183,26 @@ DEFINE_GRADIENT_PALETTE( thetachi_gp ) {
 
 extern const TProgmemRGBPalette16 WarmStripeColors_p FL_PROGMEM =   
 {
+  CRGB::Violet, 0x000000, 
+  CRGB::DeepPink, 0x000000,
   CRGB::Red, 0x000000, 
-  CRGB::White, 0x000000,
+  CRGB::DarkOrange, 0x000000,
+  CRGB::Yellow, 0x000000, 
+  CRGB::DarkOrange, 0x000000,
   CRGB::Red, 0x000000, 
-  CRGB::White, 0x000000,
-  CRGB::Red, 0x000000, 
-  CRGB::White, 0x000000,
-  CRGB::Red, 0x000000, 
-  CRGB::White, 0x000000
+  CRGB::DeepPink, 0x000000
+};
+
+extern const TProgmemRGBPalette16 CoolStripeColors_p FL_PROGMEM =   
+{
+  CRGB::Cyan, 0x000000, 
+  CRGB::ForestGreen, 0x000000,
+  CRGB::Cyan, 0x000000, 
+  CRGB::ForestGreen, 0x000000,
+  CRGB::Cyan, 0x000000, 
+  CRGB::ForestGreen, 0x000000,
+  CRGB::Cyan, 0x000000, 
+  CRGB::ForestGreen, 0x000000
 };
 
 extern const TProgmemRGBPalette16 Green_p FL_PROGMEM =   

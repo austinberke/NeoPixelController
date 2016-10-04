@@ -20,7 +20,7 @@
 #define NUM_LEDS_2    240
 
 
-#define BRIGHTNESS  255
+#define BRIGHTNESS  200
 
 enum Mode {
   DIVIDE,
@@ -39,18 +39,21 @@ enum Mode {
 };
 
 /* ==================================== */
-#define PALETTE  ucla_gp
-#define MODE BLINK
-#define SPEED 500
+#define PALETTE  PartyColors_p
+#define MODE BOUNCE
+#define SPEED 10
 /* =================================== */
 
 CRGBPalette16 palette = PALETTE;
 CRGB* colors = palette.entries;
 
-// ==> NUM_LEDS is the largest amount of LEDs on a single strip; 
+// ==> NUM_LEDS_MAX is the largest amount of LEDs on a single strip; 
 //     the smaller strip will mirror the first as long as it can
-const int NUM_LEDS = NUM_LEDS_1 > NUM_LEDS_2 ? NUM_LEDS_1 : NUM_LEDS_2;
-CRGB leds[NUM_LEDS];
+// ==> Similarly, NUM_LEDS_MIN is the smallest amount of LEDs on 
+//     a singlestrip
+const int NUM_LEDS_MAX = NUM_LEDS_1 > NUM_LEDS_2 ? NUM_LEDS_1 : NUM_LEDS_2;
+const int NUM_LEDS_MIN = NUM_LEDS_1 < NUM_LEDS_2 ? NUM_LEDS_1 : NUM_LEDS_2;
+CRGB leds[NUM_LEDS_MAX];
 
 typedef CRGBPalette16 Palette;
 

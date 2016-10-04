@@ -16,7 +16,7 @@ void setAll(CRGB& c);
    Statically display all colors in palette in distinct divisions.
    ================= */
 void p_divide() {
-  for (int i = 0; i != NUM_LEDS; i++) {
+  for (int i = 0; i != NUM_LEDS_MAX; i++) {
      leds[i] = ColorFromPalette(palette, i, BRIGHTNESS, NOBLEND);
   }
   FastLED.show();
@@ -27,7 +27,7 @@ void p_divide() {
    Display all colors in palette in distinct divisions moving forward at a constant rate.
    ================= */
 void p_rolling_divide() {
-  for (int i = 0; i != NUM_LEDS; i++) {
+  for (int i = 0; i != NUM_LEDS_MAX; i++) {
      leds[i] = ColorFromPalette(palette, i + millis()/SPEED, BRIGHTNESS, NOBLEND);
   }
   FastLED.show();
@@ -38,7 +38,7 @@ void p_rolling_divide() {
    Statically display all colors in palette in small distinct divisions.
    ================= */
 void p_stripes() {
-  for (int i = 0; i != NUM_LEDS; i++) { 
+  for (int i = 0; i != NUM_LEDS_MAX; i++) { 
     leds[i] = ColorFromPalette(palette, (i*8), BRIGHTNESS, NOBLEND); 
   }
   FastLED.show();
@@ -49,7 +49,7 @@ void p_stripes() {
    Display all colors in palette in small distinct divisions moving forward at a constant rate.
    ================= */
 void p_rolling_stripes() {
-  for (int i = 0; i != NUM_LEDS; i++) { 
+  for (int i = 0; i != NUM_LEDS_MAX; i++) { 
     leds[i] = ColorFromPalette(palette, (i*8) + millis()/SPEED, BRIGHTNESS, NOBLEND); 
   }
   FastLED.show();
@@ -60,7 +60,7 @@ void p_rolling_stripes() {
    Statically display all colors in palette as a smooth gradient.
    ================= */
 void p_gradient() {
-  for (int i = 0; i != NUM_LEDS; i++) {
+  for (int i = 0; i != NUM_LEDS_MAX; i++) {
      leds[i] = ColorFromPalette(palette, i, BRIGHTNESS, LINEARBLEND);
   }
   FastLED.show();
@@ -71,7 +71,7 @@ void p_gradient() {
    Display all colors in palette as a smooth gradient moving forward at a constant rate.
    ================= */
 void p_rolling_gradient() {
-  for (int i = 0; i != NUM_LEDS; i++) {
+  for (int i = 0; i != NUM_LEDS_MAX; i++) {
      leds[i] = ColorFromPalette(palette, i + millis()/SPEED, BRIGHTNESS, LINEARBLEND);
   }
   FastLED.show();
@@ -82,7 +82,7 @@ void p_rolling_gradient() {
    Cycle all LEDs through the palette colors at a constant rate.
    ================= */
 void p_fade() {
-  for (int i = 0; i != NUM_LEDS; i++) {
+  for (int i = 0; i != NUM_LEDS_MAX; i++) {
      leds[i] = ColorFromPalette(palette, millis()/SPEED, BRIGHTNESS, LINEARBLEND);
   }
   FastLED.show();
@@ -94,10 +94,10 @@ void p_fade() {
    with the second half of the LEDs at the complementary position in the palette.
    ================= */
 void p_half_fade() {
-  for (int i = 0; i != NUM_LEDS/2; i++) {
+  for (int i = 0; i != NUM_LEDS_MAX/2; i++) {
      leds[i] = ColorFromPalette(palette, millis()/SPEED, BRIGHTNESS, LINEARBLEND);
   }
-  for (int i = NUM_LEDS/2; i != NUM_LEDS; i++) {
+  for (int i = NUM_LEDS_MAX/2; i != NUM_LEDS_MAX; i++) {
      leds[i] = ColorFromPalette(palette, millis()/SPEED+128, BRIGHTNESS, LINEARBLEND);
   }
   FastLED.show();
@@ -111,13 +111,13 @@ void p_half_fade() {
 void p_three_fade() {
   // ==> Segments are adjusted for my current setup – 240 LEDs on first segment,
   //     then two segments of 120; feel free to update as necessary
-  for (int i = 0; i != NUM_LEDS/2; i++) {
+  for (int i = 0; i != NUM_LEDS_MAX/2; i++) {
      leds[i] = ColorFromPalette(palette, millis()/SPEED, BRIGHTNESS, LINEARBLEND);
   }
-  for (int i = NUM_LEDS/2; i != NUM_LEDS*3/4; i++) {
+  for (int i = NUM_LEDS_MAX/2; i != NUM_LEDS_MAX*3/4; i++) {
      leds[i] = ColorFromPalette(palette, millis()/SPEED+64, BRIGHTNESS, LINEARBLEND);
   }
-  for (int i = NUM_LEDS*3/4; i != NUM_LEDS; i++) {
+  for (int i = NUM_LEDS_MAX*3/4; i != NUM_LEDS_MAX; i++) {
      leds[i] = ColorFromPalette(palette, millis()/SPEED+192, BRIGHTNESS, LINEARBLEND);
   }
   FastLED.show();
@@ -130,7 +130,7 @@ void p_three_fade() {
 void p_blink() {
   for (int i = 0; i < 256; i+=16) {
     if (i % 32 == 0) {
-     for (int j = 0; j < NUM_LEDS; j++) {
+     for (int j = 0; j < NUM_LEDS_MAX; j++) {
       if(j%4 < 2) // Alternate between color and black every two LEDs
         leds[j] = ColorFromPalette(palette, i);
       else
@@ -138,7 +138,7 @@ void p_blink() {
     }
   }
   else {
-    for (int j = 0; j < NUM_LEDS; j++) {
+    for (int j = 0; j < NUM_LEDS_MAX; j++) {
       if(j%4 >= 2)
         leds[j] = ColorFromPalette(palette, i);
       else
@@ -160,7 +160,7 @@ void p_bounce() {
   // ==> Cycle through palette in eight steps to avoid similarity in neighboring colors
   for (int i = 0; i < 256; i+=32) { 
     if (direction) {
-      for (int j = 0; j != NUM_LEDS-1; j++) {
+      for (int j = 0; j != NUM_LEDS_MIN-1; j++) {
         leds[j] = leds[j+1] = ColorFromPalette(palette, i); // Ray of width 2
         FastLED.show();
         delay(SPEED);
@@ -169,7 +169,7 @@ void p_bounce() {
       direction = 0; // Backward
     }
     else {
-      for (int j = NUM_LEDS-1; j != 0; j--) {
+      for (int j = NUM_LEDS_MIN-1; j != 0; j--) {
         leds[j] = leds[j-1] = ColorFromPalette(palette, i);
         FastLED.show();
         delay(SPEED);
@@ -189,14 +189,14 @@ void p_sweep() {
   // ==> Cycle through palette in eight steps to avoid similarity in neighboring colors
  for (int i = 0; i < 256; i+=32) {
     if (i % 64 == 0) {
-      for (int j = 0; j != NUM_LEDS; j++) {
+      for (int j = 0; j != NUM_LEDS_MIN; j++) {
         leds[j] = colors[i];
         FastLED.show();
         delay(SPEED);
       }
     }
     else {
-      for (int j = NUM_LEDS-1; j != 0; j--) {
+      for (int j = NUM_LEDS_MIN-1; j != 0; j--) {
         leds[j] = colors[i];
         FastLED.show();
         delay(SPEED);
@@ -212,7 +212,7 @@ void p_sweep() {
 void p_sparkle() {
   FastLED.clear();
   for (int i = 0; i != 10; i++) {
-    int r = random(NUM_LEDS-(10+1));
+    int r = random(NUM_LEDS_MAX-(10+1));
     int j = random8();
     for (int i = 0; i != 10; i++) {
       leds[r+i] = ColorFromPalette(palette, j);
@@ -223,7 +223,7 @@ void p_sparkle() {
 }
 
 void setAll(CRGB& c) {
-  for (int i = 0; i != NUM_LEDS; i++) {
+  for (int i = 0; i != NUM_LEDS_MAX; i++) {
     leds[i] = c;
   }
 }
