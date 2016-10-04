@@ -50,7 +50,7 @@ CRGB* colors = palette.entries;
 // ==> NUM_LEDS_MAX is the largest amount of LEDs on a single strip; 
 //     the smaller strip will mirror the first as long as it can
 // ==> Similarly, NUM_LEDS_MIN is the smallest amount of LEDs on 
-//     a singlestrip
+//     a single strip
 const int NUM_LEDS_MAX = NUM_LEDS_1 > NUM_LEDS_2 ? NUM_LEDS_1 : NUM_LEDS_2;
 const int NUM_LEDS_MIN = NUM_LEDS_1 < NUM_LEDS_2 ? NUM_LEDS_1 : NUM_LEDS_2;
 CRGB leds[NUM_LEDS_MAX];
