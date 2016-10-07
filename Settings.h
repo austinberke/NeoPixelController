@@ -20,7 +20,7 @@
 #define NUM_LEDS_2    240
 
 
-#define BRIGHTNESS  200
+#define BRIGHTNESS  150
 
 enum Mode {
   DIVIDE,
@@ -33,6 +33,7 @@ enum Mode {
   HALF_FADE,
   THREE_FADE,
   BLINK,
+  ABLINK,
   BOUNCE,
   SWEEP,
   SPARKLE
@@ -40,8 +41,8 @@ enum Mode {
 
 /* ==================================== */
 #define PALETTE  PartyColors_p
-#define MODE BOUNCE
-#define SPEED 10
+#define MODE ABLINK
+#define SPEED 100
 /* =================================== */
 
 CRGBPalette16 palette = PALETTE;

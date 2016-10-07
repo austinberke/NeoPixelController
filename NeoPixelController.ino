@@ -55,6 +55,9 @@ void displayPattern(byte m) {
     case BLINK:
       p_blink();
       break;
+    case ABLINK:
+      p_ablink();
+      break;
     case BOUNCE:
       p_bounce();
       break;

@@ -125,7 +125,8 @@ void p_three_fade() {
 
 /* =================
    BLINK:
-   Discretely jump through the palette colors, blinking in alternating two's.
+   Discretely jump through the palette colors, blinking in alternating three's.
+   Alternate between current palette color and black.
    ================= */
 void p_blink() {
   for (int i = 0; i < 256; i+=16) {
@@ -149,6 +150,35 @@ void p_blink() {
   delay(SPEED);
 }
 }
+
+/* =================
+   ABLINK:
+   Discretely jump through the palette colors, blinking in alternating two's.
+   Alternate between two different colors in the palette.
+   ================= */
+void p_ablink() {
+  for (int i = 0; i < 256; i+=16) {
+    if (i % 32 == 0) {
+     for (int j = 0; j < NUM_LEDS_MAX; j++) {
+      if(j%6 < 3) // Alternate between color and another color every two LEDs
+        leds[j] = ColorFromPalette(palette, i);
+      else
+        leds[j] = ColorFromPalette(palette, i+30);
+    }
+  }
+  else {
+    for (int j = 0; j < NUM_LEDS_MAX; j++) {
+      if(j%6 >= 3)
+        leds[j] = ColorFromPalette(palette, i);
+      else
+        leds[j] = ColorFromPalette(palette, i+30);
+    }
+  }
+  FastLED.show();
+  delay(SPEED);
+}
+}
+
 
 /* =================
    BOUNCE:
